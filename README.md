@@ -114,6 +114,35 @@ The script uses `Qwen/Qwen2.5-Coder-32B-Instruct` by default. You can modify thi
 model = InferenceClientModel("your-preferred-model")
 ```
 
+## UV Cache Management
+
+UV automatically caches downloaded packages and environments. To keep the cache size manageable:
+
+### View Cache Size
+```bash
+uv cache dir
+uv cache info
+```
+
+### Clean Cache (Recommended)
+```bash
+# Remove unused cache entries (safe)
+uv cache clean
+
+# Remove all cache entries (more aggressive)
+uv cache clean --all
+```
+
+### Cache Location
+- **Windows**: `%LOCALAPPDATA%\uv\cache`
+- **macOS**: `~/Library/Caches/uv`
+- **Linux**: `~/.cache/uv`
+
+### Best Practices
+- Run `uv cache clean` periodically to remove unused packages
+- Use `uv cache clean --all` if disk space is critical
+- The cache is safe to delete entirely - UV will re-download as needed
+
 ## File Structure
 
 After running, the script may create temporary files:
