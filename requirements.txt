@@ -1,0 +1,144 @@
+# Requirements for AI SmolAgent MCP Integration Workspace
+# Generated for Python 3.8+ compatibility
+
+# ============================================================================
+# Core MCP (Model Context Protocol) Dependencies
+# ============================================================================
+
+# MCP core library - provides MCP client/server functionality
+# Required by: UsingMCPServer.py
+mcp>=1.0.0
+
+# Pydantic - data validation and serialization for MCP message types
+# Required by: UsingMCPServer.py (MCP types validation)
+pydantic>=2.0.0
+
+# ============================================================================
+# SmolAgents Dependencies
+# ============================================================================
+
+# SmolAgents - AI agent framework with tool integration
+# Required by: UsingMCPServer.py (CodeAgent, ToolCollection, InferenceClientModel)
+smolagents>=0.1.0
+
+# Hugging Face Hub - for model access and inference
+# Required by: UsingMCPServer.py (InferenceClientModel backend)
+huggingface-hub>=0.20.0
+
+# Transformers - for tokenization and model utilities
+# Required by: smolagents (indirect dependency)
+transformers>=4.30.0
+
+# ============================================================================
+# WebSocket Communication Dependencies
+# ============================================================================
+
+# WebSockets - WebSocket client/server implementation
+# Required by: UsingMCPServer.py (WebSocket MCP server demo)
+websockets>=11.0.0
+
+# AnyIO - async I/O abstraction layer
+# Required by: UsingMCPServer.py (MCP WebSocket client streams)
+anyio>=3.6.0
+
+# ============================================================================
+# Async and Concurrency Dependencies
+# ============================================================================
+
+# Asyncio - built-in Python async library (Python 3.8+ compatibility)
+# Note: Built into Python 3.7+, but some features may need backports
+
+# ============================================================================
+# HTTP and API Dependencies
+# ============================================================================
+
+# Requests - HTTP library for API calls
+# Required by: smolagents (for model API calls and tool integrations)
+requests>=2.28.0
+
+# HTTPX - modern async HTTP client
+# Required by: smolagents (async HTTP operations)
+httpx>=0.24.0
+
+# ============================================================================
+# Data Processing Dependencies
+# ============================================================================
+
+# NumPy - numerical computing
+# Required by: smolagents (data processing in tools)
+numpy>=1.21.0
+
+# Pandas - data manipulation and analysis
+# Required by: smolagents (potential tool data processing)
+pandas>=1.5.0
+
+# ============================================================================
+# Development and Utility Dependencies
+# ============================================================================
+
+# Rich - rich text and beautiful formatting in terminal
+# Required by: smolagents (enhanced console output)
+rich>=13.0.0
+
+# Typing Extensions - backport of typing features
+# Required by: All files (Python 3.8 compatibility for advanced typing)
+typing-extensions>=4.0.0
+
+# ============================================================================
+# Optional Dependencies (for extended functionality)
+# ============================================================================
+
+# Jupyter - for running .ipynb notebook files in workspace
+# Required by: code_agents.ipynb, tool_calling_agents.ipynb
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=6.4.0
+
+# Matplotlib - plotting library
+# Required by: Jupyter notebooks (potential visualization)
+matplotlib>=3.5.0
+
+# Seaborn - statistical data visualization
+# Required by: Jupyter notebooks (enhanced plotting)
+seaborn>=0.11.0
+
+# ============================================================================
+# File-specific Package Mapping
+# ============================================================================
+
+# UsingMCPServer.py requires:
+#   - mcp, pydantic (MCP protocol)
+#   - smolagents, huggingface-hub, transformers (AI agents)
+#   - websockets, anyio (WebSocket communication)
+#   - requests, httpx (HTTP operations)
+#   - rich, typing-extensions (utilities)
+
+# UsingHFSpace.py likely requires:
+#   - smolagents, huggingface-hub, transformers
+#   - requests, httpx
+#   - gradio (if using HF Spaces)
+
+# UsingLangChain.py likely requires:
+#   - langchain, langchain-community
+#   - smolagents (if integrating)
+
+# *.ipynb files require:
+#   - jupyter, ipykernel, notebook
+#   - matplotlib, seaborn (visualization)
+#   - All above packages for experimentation
+
+# ============================================================================
+# Installation Instructions
+# ============================================================================
+
+# To install all requirements:
+# pip install -r requirements.txt
+
+# To install only core MCP + SmolAgents (minimal setup):
+# pip install mcp smolagents websockets anyio pydantic
+
+# For development with Jupyter:
+# pip install -r requirements.txt
+# jupyter notebook
+
+# Note: UV/UVX must be installed separately as documented in README.md
