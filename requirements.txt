@@ -84,12 +84,69 @@ rich>=13.0.0
 # Required by: All files (Python 3.8 compatibility for advanced typing)
 typing-extensions>=4.0.0
 
+# Python-dotenv - load environment variables from .env file
+# Required by: RAG_Agent_Class (environment variable management)
+python-dotenv>=1.0.0
+
+# LangChain - for document processing and text splitting
+# Required by: RAG_Agent_Class (document processing and retrieval)
+langchain>=0.1.0
+langchain-community>=0.0.20
+
+# ============================================================================
+# Geospatial and Visualization Dependencies
+# ============================================================================
+
+# Plotly - interactive plotting library
+# Required by: multiagent_notebook.ipynb (interactive maps and visualizations)
+plotly>=5.0.0
+
+# GeoPandas - geospatial data analysis
+# Required by: multiagent_notebook.ipynb (geospatial data processing)
+geopandas>=0.13.0
+
+# Shapely - geometric objects and operations
+# Required by: multiagent_notebook.ipynb (geometric calculations)
+shapely>=2.0.0
+
+# Kaleido - static image export for plotly
+# Required by: multiagent_notebook.ipynb (saving plots as images)
+kaleido>=0.2.1
+
+# Folium - interactive leaflet maps
+# Required by: multiagent_notebook.ipynb (interactive mapping)
+folium>=0.14.0
+
+# Pillow - Python Imaging Library
+# Required by: multiagent_notebook.ipynb (image processing)
+Pillow>=9.0.0
+
+# GDAL - geospatial data access library
+# Required by: multiagent_notebook.ipynb (geospatial data access)
+GDAL>=3.5.0
+
+# Fiona - geospatial data access library
+# Required by: multiagent_notebook.ipynb (geospatial data access)
+fiona>=1.8.0
+
+# Rasterio - geospatial raster data access library
+# Required by: multiagent_notebook.ipynb (geospatial raster data access)
+rasterio>=1.2.0
+
+# ============================================================================
+# LLM Provider Dependencies
+# ============================================================================
+
+# LiteLLM - unified interface for multiple LLM providers
+# Required by: multiagent_notebook.ipynb (Together AI and other providers)
+litellm>=1.0.0
+
 # ============================================================================
 # Optional Dependencies (for extended functionality)
 # ============================================================================
 
 # Jupyter - for running .ipynb notebook files in workspace
-# Required by: code_agents.ipynb, tool_calling_agents.ipynb
+# Required by: code_agents.ipynb, tool_calling_agents.ipynb, multiagent_notebook.ipynb
 jupyter>=1.0.0
 ipykernel>=6.0.0
 notebook>=6.4.0
